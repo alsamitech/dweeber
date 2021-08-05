@@ -12,7 +12,7 @@ module.exports = {
     run: async (bot, message, args) => {
         let embedColor = '#3891A6' // color: blue, change the hex for different color
         // check if the command caller has permission to use the command
-        if (!message.member.hasPermission("MANAGE_NICKNAMES")) return message.channel.send("You dont have permission to use this command.");
+        if (!message.member.hasPermission("MANAGE_NICKNAMES")) return message.channel.send("You don't have permission to use this command.");
         if (!message.guild.me.hasPermission("MANAGE_NICKNAMES")) return message.channel.send("I don't have permission to change user nicknames!");
 
         let nUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
@@ -30,7 +30,7 @@ module.exports = {
         } catch(e) {
             console.log(e.message)
         }
-        message.channel.send(`${prevName}'s nickname have been changed to ${nickname} successfully.`)
+        message.channel.send(`${prevName}'s nickname has been changed to ${nickname} successfully.`)
 
         //modlogs
         let doneembed = new Discord.RichEmbed()
